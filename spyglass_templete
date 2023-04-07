@@ -1,0 +1,53 @@
+
+#!SPYGLASS_PROJECT_FILE
+#!VERSION 3.0
+--------------------------------------------------------------
+# This is a software generated project file. Manual edits to this
+file could be lost during the next save operation
+# Copyright Synopsys Inc.
+# Last Updated By: SpyGlass SpyGlass_vL-2016.06
+# Last Updated On Mon Dec 2 17:25:10 2019
+-------------------------------------------------------------
+##Data Import Section
+read_file -type sourcelist cmd_files_ic
+read_file -type sgdc xxx.sgdc
+##Common Options Section
+set_option top xxx
+set_option projectwdir .
+set_option language_mode mixed
+set_option designread_enable_synthesis no
+set_option designread_disable_flatten no
+set_option enableSV yes
+set_option disablev2k yes
+set_option 87 no
+set_option sdc2sgdc yes
+set_option top xxx
+set_option active_methodology
+$SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+set_option sdc2sgdcfile xxx_sdc2sgdc.sgdc
+set_option extractDomainInfo true
+set_option stop { saradc_10bit_5vp15 reg_1p5_5vp15 por_lvd_5vp15
+pch_5vp15 sensoradc_5vp15 osc800k_trim_5vp15 crystal_32k16m_5vp15
+pll_800kto48m_5vp15 pad_cp pad_vdd pad_vss RASP256X9 RASP1536X9
+pfm_1110skh32kx32_v1a0 gpio_ana_pad_5vp15 pad_vpp pad_avdh pad_avs
+por2_5vp15 }
+##Goal Setup Section
+current_methodology
+$SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+#current_goal cdc/cdc_setup_check -top xxx
+set_parameter enable_generated_clocks yes
+set_parameter write_sdc yes
+set_parameter report_indirect_port_clock yes
+set_parameter report_detail Clock_check10,all
+set_parameter allow_combo_logic yes
+set_parameter debug_proc yes
+set_parameter enable_glitchfreecell_detection yes
+set_parameter show_sdc_progress yes
+set_parameter strict_sync_check no
+set_parameter use_inferred_clocks yes
+set_parameter show_all_sdc_violations yes
+#set_parameter gen_block_sgdc -default
+set_parameter allow_clock_on_output_port yes
+set_parameter clock_gate_cell "ICG_V ICG"
+set_parameter enable_sync_cell "sync_level, Sync_Pulse"
+
